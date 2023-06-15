@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/icon.ico" type="image/x-icon">
+    <title>Evolve - 3D Revolution</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <svg
+          class="logo-img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          id="Create"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.998 2.24v7.967l-5 1.678V3.969zm1 .01 5 1.813v7.91l-5-1.762zm-.504 8.846 5.113 1.8-5.447 1.811-5.058-1.803z"
+            color="#000"
+            font-family="sans-serif"
+            font-weight="400"
+            overflow="visible"
+            style="
+              text-indent: 0;
+              text-align: start;
+              line-height: normal;
+              text-transform: none;
+              block-progression: tb;
+            "
+            fill="#ff804e"
+            class="color000000 svgShape"
+          ></path>
+        </svg>
+        <h2>Evolve</h2>
+      </div>
+      <nav class="web">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
+      </nav>
+      <nav class="mobile">
+        <div class="menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Pricing</a></li>
+          <div class="login-mobile">
+            <button>Login</button>
+            <button>Sign Up</button>
+          </div>
+        </ul>
+      </nav>
+      <div class="login">
+        <button>Login</button>
+        <button>Sign Up</button>
+      </div>
+    </header>
+    <main>
+      <div class="main-content">
+        <div class="main-text">
+          <h1>Make 3D for everyone and use them for <span>Evolve</span></h1>
+          <p>
+            You can sell 3D models to others and buy models and use them in your
+            projects.
+          </p>
+          <div class="buttons">
+            <button class="started">Get Started</button>
+            <button class="more">Learn More</button>
+          </div>
+        </div>
+        <div class="main-image">
+          <img src="./assets/3d-punk.png" alt="3d-printer" />
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    const menu = document.querySelector(".menu");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links li");
+
+    menu.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      links.forEach((link) => {
+        link.classList.toggle("fade");
+      });
+      menu.classList.toggle("active");
+    });
+
+    const buttons = document.querySelectorAll(".buttons button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+        });
+        button.classList.add("active");
+      });
+    });
+
+    const logo = document.querySelector(".logo");
+    const header = document.querySelector("header");
+    const main = document.querySelector("main");
+    const mainText = document.querySelector(".main-text");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        logo.classList.add("active");
+        header.classList.add("active");
+        main.classList.add("active");
+        mainText.classList.add("active");
+      } else {
+        logo.classList.remove("active");
+        header.classList.remove("active");
+        main.classList.remove("active");
+        mainText.classList.remove("active");
+      }
+    });
+
+    </script>
+</html>
